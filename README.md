@@ -44,7 +44,7 @@ More detailed instructions on how to use the data and code will be added as we r
 If you find this repository useful, please consider citing our paper:  
 
 ```bibtex
-@article{shirani2025canwe,
+@article{shirani2025canwevalidate,
        author = {{Shirani}, Sadegh and {Luo}, Yuwei and {Overman}, William and {Xiong}, Ruoxuan and {Bayati}, Mohsen},
         title = "{Can We Validate Counterfactual Estimations in the Presence of General Network Interference?}",
          year = 2025,
