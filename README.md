@@ -2,7 +2,7 @@
 
 This repository contains the **data and code** used in our paper:  
 
-**Can We Validate Counterfactual Estimations in the Presence of General Network Interference?**  
+**[Can We Validate Counterfactual Estimations in the Presence of General Network Interference?](https://arxiv.org/abs/2502.01106)**  
 *Authors: Sadegh Shirani, Yuwei Luo, William Overman, Ruoxuan Xiong, Mohsen Bayati*  
 
 ## **Overview**  
