@@ -55,13 +55,6 @@ pip install -e .[all]
 pip install -e .[dev]
 ```
 
-### Future PyPI Installation
-
-Once published to PyPI, the package will be installable via:
-```bash
-pip install causalmp
-```
-
 ## Available Environments
 
 1. **Belief Adoption Model**
@@ -83,18 +76,6 @@ pip install causalmp
 5. **Data Center Model**
    - Distributed service system with join-the-shortest-queue routing policy
    - Treatment effects on system efficiency
-
-## Testing
-
-Run tests with pytest:
-```bash
-pytest tests/
-```
-
-For coverage report:
-```bash
-pytest tests/ --cov=causalmp --cov-report=html
-```
 
 ## Contributing
 

@@ -64,15 +64,6 @@ Component-specific installation:
    pip install -e .[all]        # All components
    pip install -e .[dev]        # Development setup
 
-Future PyPI Installation
-------------------------
-
-Once published to PyPI, the package will be installable via:
-
-.. code-block:: bash
-
-   pip install causalmp
-
 Quick Start
 ===========
 
