@@ -1,55 +1,141 @@
-# **Repository for CausalMP**  
+# causalmp
 
-This repository contains the **data and code** used in our paper:  
+A Python package for counterfactual estimation and simulation in causal inference scenarios. The package provides tools for researchers and practitioners to perform counterfactual analysis through both estimation and simulation approaches.
 
-**[Can We Validate Counterfactual Estimations in the Presence of General Network Interference?](https://arxiv.org/abs/2502.01106)**  
-*Authors: Sadegh Shirani, Yuwei Luo, William Overman, Ruoxuan Xiong, Mohsen Bayati*  
+## Features
 
-## **Overview**  
+### Estimator Module
+- Counterfactual Evolution (CFE) estimation
+- Semi-recursive estimation
+- Cross-validation for hyperparameter selection
+- Classic estimators (DinM, HT)
+- Feature engineering and batch processing
+- Statistical moment calculation
 
-This repository will include:  
-- Data from all six environments used in the paper.  
-- Code for reproducing experiments and analyses.  
-- Documentation and instructions for usage.  
+### Simulator Module
+- Multiple simulation environments:
+  - Belief Adoption Model (social network influence)
+  - Auction Model (market dynamics)
+  - NYC Taxi Routes (transportation patterns)
+  - Exercise Encouragement Program (health interventions)
+  - Data Center Model (resource allocation)
+- Staggered rollout support
+- Customizable parameters
+- Parallel execution capabilities
 
-We are releasing the data and code in multiple stages.  
+### Runner Module
+- Combined simulation and estimation
+- Result visualization
+- Multi-run experiments
+- Parallel processing support
 
-### **Current Release**  
-📌 **02/04/2025**: We are currently releasing the **LLM-based Social Agents experiment data**.  
+## Installation
 
-### **Upcoming Releases**  
-🔜 In the next stages, we will gradually add:  
-- Data from the remaining environments.  
-- Code implementations for our models and experiments.  
-- Scripts for reproducing key results from the paper.  
+### Development Installation (Current)
 
-Stay tuned for updates!  
-
-## **Getting Started**  
-
-### **Downloading the Data**  
-The released data is available under the `data/` directory.  
-You can download it using Git:  
-
+Clone the repository and install in development mode:
 ```bash
 git clone https://github.com/CausalMP/CausalMP.git
 cd CausalMP
-ls data/
+pip install -e .
 ```
 
-### **Usage Instructions**  
-More detailed instructions on how to use the data and code will be added as we release more content.  
+Install with specific components:
+```bash
+# Estimator only
+pip install -e .[estimator]
 
-## **Citing This Work**  
-If you find this repository useful, please consider citing our paper:  
+# Simulator only  
+pip install -e .[simulator]
 
+# All components
+pip install -e .[all]
+
+# Development setup with testing tools
+pip install -e .[dev]
+```
+
+### Future PyPI Installation
+
+Once published to PyPI, the package will be installable via:
+```bash
+pip install causalmp
+```
+
+## Available Environments
+
+1. **Belief Adoption Model**
+   - Social network belief propagation
+   - Treatment effects on belief adoption
+
+2. **Auction Model**
+   - Multi-bidder market dynamics
+   - Treatment effects on object valuations
+
+3. **NYC Taxi Routes**
+   - Transportation network with pricing algorithm experiment
+   - Treatment effects on route selection
+
+4. **Exercise Encouragement Program**
+   - Health intervention effects with social network influence
+   - Behavioral change dynamics
+
+5. **Data Center Model**
+   - Distributed service system with join-the-shortest-queue routing policy
+   - Treatment effects on system efficiency
+
+## Testing
+
+Run tests with pytest:
+```bash
+pytest tests/
+```
+
+For coverage report:
+```bash
+pytest tests/ --cov=causalmp --cov-report=html
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Citation
+
+If you use this package in your research, please cite:
 ```bibtex
-@article{shirani2025canwevalidate,
-       author = {{Shirani}, Sadegh and {Luo}, Yuwei and {Overman}, William and {Xiong}, Ruoxuan and {Bayati}, Mohsen},
-        title = "{Can We Validate Counterfactual Estimations in the Presence of General Network Interference?}",
-         year = 2025,
-         pages = {arXiv:2502.01106},
-       eprint = {2502.01106},
-       adsurl = {https://ui.adsabs.harvard.edu/abs/2025arXiv250201106S},
+@article{shirani2025can,
+  title={Can We Validate Counterfactual Estimations in the Presence of General Network Interference?},
+  author={Shirani, Sadegh and Luo, Yuwei and Overman, William and Xiong, Ruoxuan and Bayati, Mohsen},
+  journal={arXiv preprint arXiv:2502.01106},
+  year={2025}
+}
+@article{shirani2024causal,
+  title={Causal message-passing for experiments with unknown and general network interference},
+  author={Shirani, Sadegh and Bayati, Mohsen},
+  journal={Proceedings of the National Academy of Sciences},
+  volume={121},
+  number={40},
+  pages={e2322232121},
+  year={2024},
+  publisher={National Academy of Sciences}
 }
 ```
+
+## Dependencies
+
+- numpy
+- pandas
+- scikit-learn
+- scipy
+- matplotlib
+- seaborn
+- joblib (optional, for parallel processing)

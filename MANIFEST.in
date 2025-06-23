@@ -1,0 +1,5 @@
+include component_requirements.py
+include requirements.txt
+include README.md
+include LICENSE
+recursive-include causalmp/simulator/environments/environments_base_data *
