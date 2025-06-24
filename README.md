@@ -51,7 +51,7 @@ pip install -e .[simulator]
 # All components
 pip install -e .[all]
 
-# Development setup with testing tools
+# Development setup
 pip install -e .[dev]
 ```
 
